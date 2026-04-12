@@ -6,10 +6,10 @@ class Solution:
         while left<right:
             temp=arr[left]
             arr[left]=arr[right]
-            arr[right]=temp 
+            arr[right]=temp
             left+=1
             right-=1 
-            
+        return arr
         
         
         

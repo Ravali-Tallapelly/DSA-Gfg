@@ -1,18 +1,14 @@
 class Solution {
     boolean twoSum(int arr[], int target) {
-        // code here
-        HashMap<Integer,Integer> mp=new HashMap<>();
-        int n=arr.length;
-        for(int i=0;i<n;i++) {
-            mp.put(arr[i],i);
-        }
-        for(int i=0;i<n;i++) {
-            int temp=target-arr[i];
-            if(mp.containsKey(temp) &&mp.get(temp)!=i) {
+        HashSet<Integer> seen=new HashSet<>();
+        for(int i=0;i<arr.length;i++) {
+            int num=target-arr[i];
+            if(seen.contains(num)) {
                 return true;
             }
-            
+            seen.add(arr[i]);
         }
         return false;
+        
     }
 }
